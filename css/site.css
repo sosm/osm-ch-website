@@ -26,14 +26,16 @@ body {
 
 #map {
     position: fixed;
-    right : 0px;
+    left : 66%;
     top : 0px;
-    width : 32%;
-    height : 100%
+    width : 34%;
+    height : 100%;
+    margin-left : 1.5em
 }
 
 .map-only #map {
-    width : 96%
+    width : 100%;
+    left : 1.5em
 }
 
 .subheader {
@@ -55,7 +57,7 @@ body {
 
 .view-selector {
     position : fixed;
-    width : 4%;
+    width : 1.5em;
     top : 0px;
     height : 100%;
     font-size : 1.4em;
