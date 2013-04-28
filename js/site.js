@@ -1,0 +1,14 @@
+$(document).ready(function() {
+    $('#map').text('');
+    var map = L.map('map').setView([47, 8.5], 9);
+    L.tileLayer('http://tile.sosm.ch/switzerland/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    $('.view-selector').click(function() { $("body").toggleClass('map-only'); });
+
+    if (location.hash === "#map") {
+        $("body").addClass('map-only');
+    }
+});

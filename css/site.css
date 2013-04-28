@@ -1,0 +1,109 @@
+body {
+    background : #F2FFEA;
+    margin : 4px
+}
+
+:link, :visited {
+    color : #497132;
+    text-decoration: none;    
+    font-weight : bold;
+}
+
+#docpage {
+    background : #F5FFF0;
+    width : 63%;
+    visibility : visible;
+}
+
+.map-only #docpage {
+    visibility : hidden;
+}
+
+#docpage h1 {
+    background : #EDFFE3;
+    color : #353F30;
+}
+
+#map {
+    position: fixed;
+    right : 0px;
+    top : 0px;
+    width : 32%;
+    height : 100%
+}
+
+.map-only #map {
+    width : 96%
+}
+
+.subheader {
+    font-size : 0.4em;
+}
+
+.toolbox {
+    background : #FBF0FF;
+    margin : 5px;
+    border : solid 2px #BBB0BF
+}
+
+.toolbox h3 {
+    background : #A6774A;
+    color : #FFF7F0;
+    margin : 0px;
+    padding : 1px 5px
+}
+
+.view-selector {
+    position : fixed;
+    width : 4%;
+    top : 0px;
+    height : 100%;
+    font-size : 1.4em;
+    font-weight : bold;
+    border-left : solid 3px #6ca64a;
+    background : #B5BFB0
+}
+
+
+#more-map-selector {
+    right : 32%;
+    visibility : visible
+}
+
+.map-only #more-map-selector {
+    visibility : hidden
+}
+
+#less-map-selector {
+    left : 0px;
+    visibility : hidden
+}
+
+.map-only #less-map-selector {
+    visibility : visible
+}
+
+/* as of http://stackoverflow.com/questions/1080792/how-to-draw-vertical-text-with-css-cross-browser */
+.rotate {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+  position: absolute;
+  bottom: 10px;
+  right : 0px;
+  width : 100%;
+  white-space: nowrap
+}

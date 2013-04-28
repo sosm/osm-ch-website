@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>OpenStreetMap Schweiz</title>
+
+    <link rel="stylesheet" href="contrib/leaflet-0.5.1.css" type="text/css"/>
+    <!--[if lte IE 8]><link rel="stylesheet" href="contrib/leaflet-ie-0.5.1.css" type="text/css"/><![endif]-->
+    <link rel="stylesheet" href="css/site.css" type="text/css"/>
+
+
+    <script src="contrib/jquery-1.9.1.min.js"></script>
+    <script src="contrib/leaflet-0.5.1.js"></script>
+    <script src="js/site.js"></script>
+
+</head>
+<body>
+<!-- map with static view for no-script users -->
+<div id="map"><img id="staticmap" src="img/staticmap.jpeg"></div>
+
+<div id="docpage">
+<h1><div class="subheader">Willkommen bei</div>OpenStreetMap Schweiz</h1>
+
+<p><a href="http://www.openstreetmap.org">OpenStreetMap</a> ist ein wiki-artiges Projekt, um gemeinsam eine Karte der gesamten Welt zu erstellen...</p>
+
+<p><a href="http://wiki.openstreetmap.org">Mehr Informationen über Openstreetmap</a><br/>
+<a href="http://www.sosm.ch">Mehr Informationen über OSM in der Schweiz</a></p>
+
+<div id="ch-tools" class="toolbox">
+<h3>OSM-Tools für die Schweiz</h3>
+<ul>
+  <li><a href="http://taginfo.openstreetmap.ch">Taginfo Schweiz</a></li>
+  <li><a href="http://macun.sosm.ch/swissroute/">Routing für Fussgänger, Velo und Auto</a></li>
+  <li><a href="http://didok.osmd.ch">Check-Karte für Haltestellen des ÖV</li>
+  <li><a href="http://qa.poole.ch/ch-roads">Strassen-Check</a></li>
+</ul>
+</div>
+
+<div id="ch-data" class="toolbox">
+<h3>OSM-Daten für die Schweiz</h3>
+<ul>
+  <li><a href="http://macun.sosm.ch/data">Schweiz-Extrakt</a></li>
+  <li><a href="http://macun.sosm.ch/data/replication">Stündliche Diffs</a></li>
+  <li><a href="http://macun.sosm.ch/overpass">Overpass-API Schweiz</a></li>
+</ul>
+</div>
+
+<div id="ext-tools" class="toolbox">
+<h3>Weltweite Mapping Tools</h3>
+<ul>
+  <li><a href="http://qa.poole.ch">Karte fehlender Adressen und Strassennamen</a></li>
+</ul>
+</div>
+
+<div id="ext-data" class="toolbox">
+<h3>Weltweite OSM-basierte Karten</h3>
+<ul>
+ <li><a href="http://osm.t-i.ch/bicycle/map">Veloweg-Karte</a></li>
+ <li><a href="http://www.waymarkedtrails.org">Rad- und Wanderwege</a></li>
+</ul>
+</div>
+
+</div> <!-- docpage-->
+
+<div id="more-map-selector" class="view-selector"><a href="#map" class="rotate">Mehr Karte</a></div>
+<div id="less-map-selector" class="view-selector"><a href="#" class="rotate">Mehr Informationen zu OpenStreetMap</a></div>
+
+
+</body>
+</html>
