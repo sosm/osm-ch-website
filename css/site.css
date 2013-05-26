@@ -1,6 +1,8 @@
 body {
     background : #F2FFEA;
-    margin : 4px
+    margin : 4px;
+    font-family : sans-serif;
+    font-size : 14px
 }
 
 :link, :visited {
