@@ -4,7 +4,7 @@ $(document).ready(function() {
     $('#map').text('');
     map = L.map('map').setView([47, 8.5], 9);
     L.tileLayer('http://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
-        maxZoom: 20,
+        maxZoom: 21,
         attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
