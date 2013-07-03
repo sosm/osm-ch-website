@@ -17,4 +17,6 @@ $(document).ready(function() {
     if (location.hash === "#map") {
         $("body").addClass('map-only');
     }
+
+    hash = new L.Hash(map);
 });
