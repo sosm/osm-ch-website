@@ -14,7 +14,7 @@ $(document).ready(function() {
         map.invalidateSize();
     });
 
-    if (location.hash === "#map") {
+    if (/#[0-9]+\//.test(location.hash)) {
         $("body").addClass('map-only');
     }
 
