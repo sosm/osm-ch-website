@@ -27,7 +27,7 @@
             footer.innerHTML=chcoord.x.toFixed(0) + ", " + chcoord.y.toFixed(0);
         }
         $(document).ready(function() {
-            map = L.map('map').setView(L.CRS.EPSG3857.pointToLatLng([200000,600000]), 9);
+            map = L.map('map').setView([1.6, 5.9], 9);
             L.tileLayer('http://tile.osm.ch/21781/{z}/{x}/{y}.png', {
                     maxZoom: 18,
                     attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors. More <a href="http://sosm.ch/swiss-lv95-projected-tiles/">information</a>'
@@ -38,7 +38,7 @@
     </script>
 </head>
 <body>
-<div id="map_footer_left" style="bottom:0; left:0; position:absolute; z-index:1000; font: 12px/1.5 "Helvetica Neue",Arial,Helvetica,sans-serif;">
+<div id="map_footer_left" style="bottom:0; left:0; position:absolute; z-index:1000; font: 12px/1.5 Arial,Helvetica,sans-serif;">
 
 </div>
 <div id="map"></div>
