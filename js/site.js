@@ -1,5 +1,10 @@
 var map;
 var maphash = null;
+var geosearch = new L.Control.GeoSearch({
+                    provider: new L.GeoSearch.Provider.OpenStreetMap({countrycodes: 'ch'}),
+                    searchLabel: 'Adresse eingeben',
+                    notFoundMessage: 'Es wurden keine Ergebnisse gefunden'
+                });
 
 $(document).ready(function() {
     $('#more-map-selector').html('<a href="#" class="rotate">Mehr Karte</a>');
@@ -17,8 +22,10 @@ $(document).ready(function() {
                 maphash.startListening();
             else
                 maphash = new L.Hash(map);
+            geosearch.addTo(map);
         } else {
             maphash.stopListening();
+            geosearch.removeFrom(map);
         }
         map.invalidateSize();
     });
@@ -26,7 +33,7 @@ $(document).ready(function() {
     if (/#[0-9]+\//.test(location.hash)) {
         $("body").addClass('map-only');
         maphash = new L.Hash(map);
+        geosearch.addTo(map);
         map.invalidateSize();
     }
-
 });
