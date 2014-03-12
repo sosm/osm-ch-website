@@ -56,11 +56,25 @@ L.Control.OSMReportAProblem = L.Control.Attribution.extend({
 $(document).ready(function() {
     $('#more-map-selector').html('<a href="#" class="rotate">Mehr Karte</a>');
     $('#map').text('');
-    map = L.map('map', {attributionControl: false}).setView([47, 8.5], 9);
-    L.tileLayer('http://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
+    map = new L.map('map', {attributionControl: false}).setView([47, 8.5], 9);
+
+    standard_style = L.tileLayer('http://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
         maxZoom: 21,
         attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    swiss_style = L.tileLayer('http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png', {
+        maxZoom: 21,
+        attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    var baseMaps = {
+        "standard" : standard_style,
+        "swiss style": swiss_style
+    };
+
+    (new L.control.layers(baseMaps)).addTo(map);
+
     (new L.Control.OSMReportAProblem({})).addTo(map);
 
     $('.view-selector').click(function() { 
