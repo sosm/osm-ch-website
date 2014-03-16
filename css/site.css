@@ -32,12 +32,11 @@ body {
     top : 0px;
     width : 34%;
     height : 100%;
-    margin-left : 1.5em
 }
 
 .map-only #map {
     width : 100%;
-    left : 1.5em
+    left : 0;
 }
 
 .subheader {
@@ -76,6 +75,10 @@ body {
 
 .map-only #more-map-selector {
     visibility : hidden
+}
+
+.leaflet-left {
+    left: 2.7em;
 }
 
 #less-map-selector {
