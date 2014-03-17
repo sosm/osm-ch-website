@@ -12,6 +12,14 @@ L.Control.OSMReportAProblem = L.Control.Attribution.extend({
                 position: 'bottomright',
                 prefix: '<a href="http://www.openstreetmap.org/fixthemap?lat={x}&lon={y}&zoom={z}">Behebe einen Fehler</a>'
         },
+        _layerAdd: function(e)
+        {
+                this.addAttribution(e.layer.getAttribution());
+        },
+        _layerRemove: function(e)
+        {
+                this.removeAttribution(e.layer.getAttribution());
+        },
         onAdd: function (map) {
                 this._container = L.DomUtil.create('div', 'leaflet-control-attribution');
                 L.DomEvent.disableClickPropagation(this._container);
@@ -25,6 +33,8 @@ L.Control.OSMReportAProblem = L.Control.Attribution.extend({
 
                 this._update();
                 map.on('moveend', this._update, this);
+                map.on('layeradd', this._layerAdd, this);
+                map.on('layerremove', this._layerRemove, this);
 
                 return this._container;
         },
@@ -65,7 +75,9 @@ $(document).ready(function() {
 
     swiss_style = L.tileLayer('http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png', {
         maxZoom: 21,
-        attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+	'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by 4</a> ' +
+	'<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>'
     });
 
     var baseMaps = {
