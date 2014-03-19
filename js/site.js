@@ -14,11 +14,15 @@ L.Control.OSMReportAProblem = L.Control.Attribution.extend({
         },
         _layerAdd: function(e)
         {
-                this.addAttribution(e.layer.getAttribution());
+		if (e.layer.getAttribution) {
+                        this.addAttribution(e.layer.getAttribution());
+		}
         },
         _layerRemove: function(e)
         {
-                this.removeAttribution(e.layer.getAttribution());
+		if (e.layer.getAttribution) {
+                        this.removeAttribution(e.layer.getAttribution());
+                }
         },
         onAdd: function (map) {
                 this._container = L.DomUtil.create('div', 'leaflet-control-attribution');
