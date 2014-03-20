@@ -80,7 +80,7 @@ $(document).ready(function() {
     swiss_style = L.tileLayer('http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png', {
         maxZoom: 21,
         attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-	'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by 4</a> ' +
+	'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
 	'<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>'
     });
 
