@@ -110,8 +110,8 @@ $(document).ready(function() {
 
     if (/#[0-9]+\//.test(location.hash)) {
         $("body").addClass('map-only');
+        map.invalidateSize();
         maphash = new L.Hash(map);
         geosearch.addTo(map);
-        map.invalidateSize();
     }
 });
