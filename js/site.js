@@ -6,6 +6,77 @@ var geosearch = new L.Control.GeoSearch({
                     notFoundMessage: 'Es wurden keine Ergebnisse gefunden'
                 });
 
+L.SOSM = {};
+
+L.SOSM.layers = L.Control.Layers.extend({
+  onAdd : function (map) {
+    for (var i in map.baseLayers){
+      this._addLayer(map.baseLayers[i], map.baseLayers[i].options.name);
+    }
+    return L.Control.Layers.prototype.onAdd.call(this, map);
+  }
+});
+
+L.SOSM.Map = L.Map.extend({
+  initialize: function(id, options) {
+    L.Map.prototype.initialize.call(this, id, options);
+
+    this.baseLayers = [
+
+      new L.TileLayer(
+        document.location.protocol === 'https:' ?
+          'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png' :
+          'http://tile.osm.ch/switzerland/{z}/{x}/{y}.png',
+        {
+          maxZoom: 21,
+          attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          code: "M",
+          keyid: "mapnik",
+          name: "standard"
+      }),
+      new L.TileLayer(
+        document.location.protocol === 'https:' ?
+          'https://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png' :
+          'http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png',
+        {
+          maxZoom: 21,
+          attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
+            '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
+          code: "S",
+          keyid: "swiss-style",
+          name: "swiss style"
+      }),
+    ];
+  },
+
+  updateLayers: function(layerParam) {
+    layerParam = layerParam || "M";
+    var layersAdded = "";
+
+    for (var i = this.baseLayers.length - 1; i >= 0; i--) {
+      if (layerParam.indexOf(this.baseLayers[i].options.code) >= 0) {
+        this.addLayer(this.baseLayers[i]);
+        layersAdded = layersAdded + this.baseLayers[i].options.code;
+      } else if (i == 0 && layersAdded == "") {
+        this.addLayer(this.baseLayers[i]);
+      } else {
+        this.removeLayer(this.baseLayers[i]);
+      }
+    }
+  },
+
+  getLayersCode: function () {
+    var layerConfig = '';
+    for (var i in this._layers) { // TODO: map.eachLayer
+      var layer = this._layers[i];
+      if (layer.options && layer.options.code) {
+        layerConfig += layer.options.code;
+      }
+    }
+    return layerConfig;
+  },
+});
 
 L.Control.OSMReportAProblem = L.Control.Attribution.extend({
         options: {
@@ -70,26 +141,10 @@ L.Control.OSMReportAProblem = L.Control.Attribution.extend({
 $(document).ready(function() {
     $('#more-map-selector').html('<a href="#" class="rotate">Mehr Karte</a>');
     $('#map').text('');
-    map = new L.map('map', {attributionControl: false}).setView([47, 8.5], 9);
+    map = new L.SOSM.Map('map', {attributionControl: false}).setView([47, 8.5], 9);
 
-    standard_style = L.tileLayer('http://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
-        maxZoom: 21,
-        attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    swiss_style = L.tileLayer('http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png', {
-        maxZoom: 21,
-        attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-	'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
-	'<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>'
-    });
-
-    var baseMaps = {
-        "standard" : standard_style,
-        "swiss style": swiss_style
-    };
-
-    (new L.control.layers(baseMaps)).addTo(map);
+    (new L.SOSM.layers()).addTo(map);
+    map.updateLayers('');
 
     (new L.Control.OSMReportAProblem({})).addTo(map);
 

@@ -21,6 +21,11 @@
 			if(hash.indexOf('#') === 0) {
 				hash = hash.substr(1);
 			}
+			var layer = '';
+			if (hash.indexOf('?') >= 0) {
+				layer = hash.slice(hash.indexOf('?')+1);
+				hash = hash.slice(0,hash.indexOf('?'));
+			}
 			var args = hash.split("/");
 			if (args.length == 3) {
 				var zoom = parseInt(args[0], 10),
@@ -31,7 +36,8 @@
 				} else {
 					return {
 						center: new L.LatLng(lat, lon),
-						zoom: zoom
+						zoom: zoom,
+						layer: layer
 					};
 				}
 			} else {
@@ -44,10 +50,14 @@
 			    zoom = map.getZoom(),
 			    precision = Math.max(0, Math.ceil(Math.log(zoom) / Math.LN2));
 
+			var layer = "";
+			if (map.getLayersCode() !== "M")
+				layer = "?" + map.getLayersCode();
+
 			return "#" + [zoom,
 				center.lat.toFixed(precision),
 				center.lng.toFixed(precision)
-			].join("/");
+			].join("/") + layer;
 		},
 
 		init: function(map) {
@@ -100,6 +110,7 @@
 				this.movingMap = true;
 
 				this.map.setView(parsed.center, parsed.zoom);
+				this.map.updateLayers(parsed.layer);
 
 				this.movingMap = false;
 			} else {
@@ -126,6 +137,8 @@
 		hashChangeInterval: null,
 		startListening: function() {
 			this.map.on("moveend", this.onMapMove, this);
+			this.map.on("layeradd", this.onMapMove, this);
+			this.map.on("layerremove", this.onMapMove, this);
 
 			if (HAS_HASHCHANGE) {
 				L.DomEvent.addListener(window, "hashchange", this.onHashChange);
@@ -138,6 +151,8 @@
 
 		stopListening: function() {
 			this.map.off("moveend", this.onMapMove, this);
+			this.map.off("layeradd", this.onMapMove, this);
+			this.map.off("layerremove", this.onMapMove, this);
 
 			if (HAS_HASHCHANGE) {
 				L.DomEvent.removeListener(window, "hashchange", this.onHashChange);
@@ -156,4 +171,5 @@
 	L.Map.prototype.removeHash = function() {
 		this._hash.remove();
 	};
+
 })(window);
