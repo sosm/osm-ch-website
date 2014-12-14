@@ -15,49 +15,41 @@
 
 		var map = L.map('map').setView([47, 8], 8);
 
-		var noname = L.tileLayer('http://tile.osmd.ch/noname/{z}/{x}/{y}.png', {
+		var gsw = L.tileLayer('http://tile.osm.ch/name-gsw/{z}/{x}/{y}.png', {
 			maxZoom: 18,
           		attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
             '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
 		});
 
-		var gsw = L.tileLayer('http://tile.osmd.ch/gsw-label/{z}/{x}/{y}.png', {
+		var rm = L.tileLayer('http://tile.osm.ch/name-rm/{z}/{x}/{y}.png', {
 			maxZoom: 18,
           		attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
             '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
 		});
 
-		var rm = L.tileLayer('http://tile.osmd.ch/rm-label/{z}/{x}/{y}.png', {
+		var it = L.tileLayer('http://tile.osm.ch/name-it/{z}/{x}/{y}.png', {
 			maxZoom: 18,
           		attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
             '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
 		});
 
-		var it = L.tileLayer('http://tile.osmd.ch/it-label/{z}/{x}/{y}.png', {
+		var fr = L.tileLayer('http://tile.osm.ch/name-fr/{z}/{x}/{y}.png', {
 			maxZoom: 18,
           		attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
             '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
 		});
 
-		var fr = L.tileLayer('http://tile.osmd.ch/fr-label/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-          		attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-            'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
-            '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
-		});
-
-		noname.addTo(map);
 		gsw.addTo(map);
-		var overlays = {"fr": fr,
+		var layers = {"fr": fr,
 			      "gsw": gsw,
 			      "it": it,
 			      "rm": rm};
 
-		      L.control.layers({"blank":noname}, overlays).addTo(map);
+		      L.control.layers(layers).addTo(map);
 
 	</script>
 </body>
