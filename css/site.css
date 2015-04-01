@@ -114,3 +114,8 @@ body {
   width : 100%;
   white-space: nowrap
 }
+
+#footer_right{
+  float: right;
+  margin-right: 37.5%;
+}
