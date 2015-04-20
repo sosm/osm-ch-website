@@ -12,7 +12,6 @@ body {
 }
 
 #docpage {
-    background : #F5FFF0;
     width : 63%;
     visibility : visible;
 }
@@ -22,7 +21,6 @@ body {
 }
 
 #docpage h1 {
-    background : #EDFFE3;
     color : #353F30;
 }
 
@@ -44,9 +42,7 @@ body {
 }
 
 .toolbox {
-    background : #FBF0FF;
     margin : 5px;
-    border : solid 2px #BBB0BF
 }
 
 .toolbox h3 {

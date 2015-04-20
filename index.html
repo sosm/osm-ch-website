@@ -15,7 +15,16 @@
     <script src="contrib/l.control.geosearch.js"></script>
     <script src="contrib/l.geosearch.provider.openstreetmap.js"></script>
     <script src="js/site.js"></script>
-
+    <script type="text/javascript">
+       window.liveSettings = {
+         api_key: "09532b8c99274efca5c33b069c22122c",
+         detectlang: true,
+         dynamic: true,
+         autocollect: true,
+         staging: false
+       };
+     </script>
+     <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
 </head>
 <body>
 <!-- map with static view for no-script users -->
@@ -24,7 +33,7 @@
 <div id="docpage">
 <h1><div class="subheader">Willkommen bei</div>OpenStreetMap Schweiz</h1>
 
-<p><a href="http://www.openstreetmap.org">OpenStreetMap</a> ist ein wiki-artiges Projekt, um gemeinsam eine Karte der gesamten Welt zu erstellen...</p>
+<p><a href="http://www.openstreetmap.org">OpenStreetMap</a> ist ein Projekt von Freiwilligen gemeinsam eine freie Karte der gesamten Welt zu erstellen...</p>
 
 <p><a href="http://wiki.openstreetmap.org">Mehr Informationen über Openstreetmap</a><br/>
 <a href="http://www.sosm.ch">Mehr Informationen über OSM in der Schweiz</a></p>
@@ -32,7 +41,9 @@
 <div id="ch-tools" class="toolbox">
 <h3>OSM-Tools für die Schweiz</h3>
 <ul>
+  <li><a href="http://umap.osm.ch">Schweizer uMap Server</a></li>
   <li><a href="http://taginfo.osm.ch">Taginfo Schweiz</a></li>
+  <li><a href="http://overpass-turbo.osm.ch/">Overpass Turbo Schweiz</a></li>
   <li><a href="http://routing.osm.ch">Routing für Fussgänger, Velo und Auto</a></li>
   <li><a href="http://didok.osm.ch">Check-Karte für Haltestellen des ÖV</a></li>
   <li><a href="http://qa.poole.ch/ch-roads">Strassen-Check</a></li>
@@ -48,6 +59,14 @@
 </ul>
 </div>
 
+<div id="ext-data" class="toolbox">
+<h3>OSM Karten der Schweiz</h3>
+<ul>
+ <li><a href="chlv95.html">Standard Karte in LV95 Projektion</a></li>
+ <li><a href="chlv03.html">Standard Karte in LV03 Projektion</a></li>
+</ul>
+</div>
+
 <div id="ext-tools" class="toolbox">
 <h3>Weltweite Mapping Tools</h3>
 <ul>
@@ -60,7 +79,6 @@
 <ul>
  <li><a href="http://osm.t-i.ch/bicycle/map">Veloweg-Karte</a></li>
  <li><a href="http://www.waymarkedtrails.org">Rad- und Wanderwege</a></li>
- <li><a href="chlv95.html">OSM in Schweizer LV95 Projektion</a></li>
 </ul>
 </div>
 
