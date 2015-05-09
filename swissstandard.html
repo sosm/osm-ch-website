@@ -28,9 +28,9 @@
         }
         $(document).ready(function() {
             map = L.map('map').setView([ 46.72693, 8.22700 ], 9);
-            L.tileLayer('http://tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
+            L.tileLayer('//tile.osm.ch/switzerland/{z}/{x}/{y}.png', {
                     maxZoom: 18,
-                    attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors. More <a href="http://sosm.ch/projects/services/">information</a>'
+                    attribution: '&copy; <a href="//openstreetmap.org/copyright">OpenStreetMap</a> contributors. More <a href="//sosm.ch/projects/services/">information</a>'
                 }).addTo(map);
 	    <!--hash = new L.Hash(map);-->
             map.on('mousemove', onMouseMove);
