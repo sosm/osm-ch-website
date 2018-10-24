@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+    <head>
+        <meta charset="UTF-8">
+        <title>OpenStreetMap Schweiz</title>
+        <link href="styles.css" type="text/css" rel="stylesheet" />
+        <link href="contrib/leaflet-0.7.2.css" rel="stylesheet" type="text/css">
+        <link href="contrib/l.geosearch.css" rel="stylesheet" type="text/css">
+        <script src="contrib/jquery-1.9.1.min.js"></script>
+        <script src="contrib/leaflet-0.7.2.js"></script>
+        <script src="contrib/leaflet-hash.js"></script>
+        <script src="contrib/l.control.geosearch.js"></script>
+        <script src="contrib/l.geosearch.provider.openstreetmap.js"></script>
+        <script src="js/site.js"></script>
+        <script type="text/javascript">
+           window.liveSettings = {
+             api_key: "09532b8c99274efca5c33b069c22122c",
+             detectlang: true,
+             dynamic: true,
+             autocollect: true,
+             staging: false
+           };
+        </script>
+        <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
+    </head>
+    <body>
+        <div onclick="document.getElementById('menu').style.display = 'block'" id="mapClose">Menü anzeigen</div>
+        <div id="map"></div>
+        <div id="menu" class="site mainSite">
+            <div class="mainHeader">
+                <div>
+                    <div>
+                        <div>Welcome to</div>
+                        <div class="title">OpenStreetMap Switzerland</div>
+                    </div>
+                    <img src="mainLogo.png" height="100%" />
+                </div>
+            </div>
+            <div class="main">
+                <div class="grid">
+                    <a class="ie-osm" href="osm.html"><h1>Was ist OSM</h1></a>
+                    <a class="ie-useOSM" href="nutze-osm.html"><h1>Nutze OSM</h1></a>
+                    <a class="ie-help" href="hilfe.html"><h1>Wie erhalte ich Hilfe</h1></a>
+                    <div onclick="document.getElementById('menu').style.display = 'none'" id="mapOverlay">&nbsp;</div>
+                    <a class="ie-improve" href="verbessern.html"><h1>Verbessern</h1></a>
+                    <a class="ie-projects" href="projekte.html"><h1>Weitere OSM Projekte</h1></a>
+                    <a class="ie-developer" href="entwickler.html"><h1>Für Entwickler</h1></a>
+                </div>
+            </div>
+            <div class="footer"><a href="contact.html">Operated by SOSM, Contact/Imprint</a> <a href="http://sosm.ch/about/terms-of-service/">Nutzungsbedingungen und Datenschutz.</a> Hosting sponsored by <a href="http://adfinis-sygroup.ch/">Adfinis SyGroup</a></div>
+        </div>
+    </body>
+</html>

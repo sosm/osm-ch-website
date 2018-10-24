@@ -1,0 +1,214 @@
+body{
+    margin:0 auto;
+    font-family: sans-serif;
+}
+.main > *{
+   margin: 0px;
+   padding: 0px;
+}
+.site{
+    min-height: 100vh;
+    background-color: #D9D9D9
+}
+.header{
+    background-color: white;
+    height: 25vh;
+}
+.header > div{
+    width: 100%;
+    text-align: center;
+    min-height: 19vh
+}
+.header > div > div{
+    display: inline-block;
+}
+.header > div > div > div{
+    display: flex;
+}
+.header > div h1{
+    font-size: 5vh;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 10vh;
+}
+.header > div img{
+    max-height: calc(25vh - 48px - 20px * 2);
+    margin: 20px;
+}
+nav{
+    display: flex;
+    background-color: #D9D9D9;
+    min-height: 6vh;
+}
+nav div{
+    width:5px;
+}
+nav a{
+    width: calc((100vw - 30px)/7);
+    background-color: #808080;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+nav .active{
+    background-color: #D9D9D9;
+    color: #808080;
+}
+.main{
+    min-height: calc(75vh - 1.5rem - 3vw - 30px);
+    padding-top: 3vw;
+    padding-bottom: 30px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+.main p{
+    margin-bottom: 30px;
+}
+.main h3{
+    margin-bottom: 10px;
+}
+.main h4{
+    margin-bottom: 5px;
+}
+.footer{
+    height: 1.5rem;
+    text-align: center;
+}
+.main ul{
+    text-align: center;
+    list-style-position: inside;
+}
+.grid{
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(3,calc(100% / 3));
+    grid-template-rows: calc((32vh - 1.5rem)/2) 50vh calc((32vh - 1.5rem)/2);
+    -ms-grid-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+    -ms-grid-rows: calc((32vh - 1.5rem)/2) 50vh calc((32vh - 1.5rem)/2);
+}
+.grid > * {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+}
+.bar > *{
+    width: 33%;
+    text-align: center;
+    background-color: white;
+}
+.mainSite{
+    background-color: transparent;
+}
+.mainSite .main{
+    width: 100% !important;
+    min-height: calc(82vh - 1.5rem - 3vw);
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.mainSite .footer{
+    background-color: white;
+}
+.mainSite .main a{
+    text-decoration: none;
+    color: black;
+}
+.mainSite .main a:visited{
+    color: black;
+}
+.mainHeader{
+    background-color: white;
+}
+.mainHeader > div{
+    height: 18vh;
+    margin: 0 auto;
+    width: 45%;
+    align-content: center;
+    display: flex;
+    background-color: white;
+}
+.mainHeader > div > *{
+    margin-top: 20px;
+}
+.mainHeader .title{
+    font-size: 48px;
+    font-weight: bold
+}
+.mainHeader img{
+    max-height: 60%;
+    margin-left: 20px;
+}
+#mapOverlay{
+    background-color: transparent;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    cursor:url(cursor.png), pointer;
+}
+#mapClose{
+    z-index: -10;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    cursor: pointer;
+    background-color: white;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 0px 8px 0px 0px;
+}
+#map{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100vw;
+    height:100vh;
+    z-index: -20;
+}
+.ie-osm{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+}
+.ie-useOSM{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+}
+.ie-help{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+}
+.ie-improve{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+}
+.ie-projects{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+}
+.ie-developer{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+}
