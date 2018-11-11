@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>OpenStreetMap Schweiz</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div class="site">
@@ -16,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <nav>
+                <nav class="desktop">
                     <a href="index.html">Zur Karte</a>
                     <div>&nbsp;</div>
                     <a href="osm.html">Was ist OSM</a>
@@ -31,6 +32,17 @@
                     <div>&nbsp;</div>
                     <a href="entwickler.html">Für Entwickler</a>
                 </nav>
+                <div tabindex="0" class="mobile menuButton"><div>Menü</div>
+                    <nav>
+                        <a href="index.html">Zur Karte</a>
+                        <a href="osm.html">Was ist OSM</a>
+                        <a href="nutze-osm.html">Nutze OSM</a>
+                        <a href="hilfe.html">Hilfe zu OSM</a>
+                        <a href="verbessern.html">Verbessern</a>
+                        <a href="projekte.html">Weitere Projekte</a>
+                        <a href="entwickler.html">Für Entwickler</a>
+                    </nav>
+                </div>
             </div>
             <div class="main">
             </div>

@@ -7,8 +7,8 @@ body{
    padding: 0px;
 }
 .site{
+    background-color: #D9D9D9;
     min-height: 100vh;
-    background-color: #D9D9D9
 }
 .header{
     background-color: white;
@@ -26,14 +26,14 @@ body{
     display: flex;
 }
 .header > div h1{
-    font-size: 5vh;
     vertical-align: middle;
     text-align: center;
     line-height: 10vh;
+    font-size: 5vh;
 }
 .header > div img{
-    max-height: calc(25vh - 48px - 20px * 2);
     margin: 20px;
+    max-height: calc(25vh - 48px - 20px * 2);
 }
 nav{
     display: flex;
@@ -44,26 +44,26 @@ nav div{
     width:5px;
 }
 nav a{
-    width: calc((100vw - 30px)/7);
     background-color: #808080;
     text-decoration: none;
     text-align: center;
     padding: 10px;
     color: white;
-    font-size: 1.5vw;
     font-weight: bold;
+    font-size: 1.5vw;
+    width: calc((100vw - 30px)/7);
 }
 nav .active{
     background-color: #D9D9D9;
     color: #808080;
 }
 .main{
-    min-height: calc(75vh - 1.5rem - 3vw - 30px);
-    padding-top: 3vw;
     padding-bottom: 30px;
     text-align: center;
     width: 50%;
     margin: 0 auto;
+    min-height: calc(75vh - 1.5rem - 3vw - 30px);
+    padding-top: 3vw;
 }
 .main p{
     margin-bottom: 30px;
@@ -75,7 +75,7 @@ nav .active{
     margin-bottom: 5px;
 }
 .footer{
-    height: 1.5rem;
+    min-height: 1.5rem;
     text-align: center;
 }
 .main ul{
@@ -83,12 +83,9 @@ nav .active{
     list-style-position: inside;
 }
 .grid{
-    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(3,calc(100% / 3));
     grid-template-rows: calc((32vh - 1.5rem)/2) 50vh calc((32vh - 1.5rem)/2);
-    -ms-grid-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
-    -ms-grid-rows: calc((32vh - 1.5rem)/2) 50vh calc((32vh - 1.5rem)/2);
+    grid-template-columns: repeat(3,calc(100% / 3));
 }
 .grid > * {
     background-color: white;
@@ -107,9 +104,9 @@ nav .active{
 }
 .mainSite .main{
     width: 100% !important;
-    min-height: calc(82vh - 1.5rem - 3vw);
     padding-bottom: 0px;
     padding-top: 0px;
+    min-height: calc(82vh - 1.5rem);
 }
 .mainSite .footer{
     background-color: white;
@@ -125,12 +122,12 @@ nav .active{
     background-color: white;
 }
 .mainHeader > div{
-    height: 18vh;
     margin: 0 auto;
     width: 45%;
     align-content: center;
     display: flex;
     background-color: white;
+    height: 18vh;
 }
 .mainHeader > div > *{
     margin-top: 20px;
@@ -149,10 +146,6 @@ nav .active{
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
     cursor:url(cursor.png), pointer;
 }
 #mapClose{
@@ -172,9 +165,20 @@ nav .active{
     left: 0px;
     right: 0px;
     bottom: 0px;
+    z-index: -20;
     width: 100vw;
     height:100vh;
-    z-index: -20;
+}
+.grid{
+    display: -ms-grid;
+    -ms-grid-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+    -ms-grid-rows: calc((32vh - 1.5rem)/2) 50vh calc((32vh - 1.5rem)/2);
+}
+#mapOverlay{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
 }
 .ie-osm{
     -ms-grid-row: 1;
@@ -211,4 +215,78 @@ nav .active{
     -ms-grid-row-span: 1;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
+}
+.mobile{display:none}
+@media(max-width:700px){
+    .header h1{
+        font-size: 5vw!important;
+        line-height: calc((25vh - 48px - 20px * 2)/2) !important;
+    }
+    .desktop{display:none!important}
+    .mobile{display:block}
+    .header .menubutton{
+        width:100%;
+        background-color: #D9D9D9
+    }
+    .header .menuButton > div{
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .header .menuButton nav{
+        display:block;
+        visibility: hidden;
+        opacity: 0;
+        position:relative;
+        border-bottom: 1px;
+        border-top: 1px;
+        border-left: 0px;
+        border-right: 0px;
+        border-color: black;
+        border-style: solid;
+    }
+    .header .menuButton nav a{
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        background-color: #D9D9D9;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .header .menuButton:focus nav{
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.2s linear;
+        transition: opacity 0.2s linear;
+    }
+    .header .menuButton:focus-within nav{
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.2s linear;
+        transition: opacity 0.2s linear;
+    }
+	.main{
+		width:90%;
+	}
+    .mainSite .main .grid{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: inherit;
+    }
+    #mapOverlay{flex-grow: 5555;}
+    .mainSite .main .grid h1{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 6vw;
+    }
+    .mainHeader > div{
+        width: 90%
+    }
+    .mainHeader .title{
+        font-size: 8vw;
+    }
+	#mapClose{
+		font-size: 15px;
+		padding: 10px;
+	}
 }
