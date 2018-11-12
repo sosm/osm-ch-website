@@ -28,7 +28,7 @@ body{
 .header > div h1{
     vertical-align: middle;
     text-align: center;
-    line-height: 10vh;
+    /*line-height: 10vh;*/
     font-size: 5vh;
 }
 .header > div img{
@@ -166,7 +166,7 @@ nav .active{
     right: 0px;
     bottom: 0px;
     z-index: -20;
-    width: 100vw;
+    width: 100%;
     height:100vh;
 }
 .grid{
@@ -283,7 +283,7 @@ nav .active{
         width: 90%
     }
     .mainHeader .title{
-        font-size: 8vw;
+        font-size: calc(1.8vw + 2.5vh);
     }
 	#mapClose{
 		font-size: 15px;
