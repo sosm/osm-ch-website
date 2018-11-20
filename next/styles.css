@@ -290,3 +290,60 @@ nav .active{
 		padding: 10px;
 	}
 }
+@media(max-height: 500px){
+    .mainHeader > div{
+        height: 35vh;
+    }
+    .mainHeader .title{
+        font-size: calc(1.8vw + 2.4vh);
+    }
+    .grid{
+        grid-template-rows: 120px auto auto;
+    }
+    #mapClose{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #mapOverlay{
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+    .ie-osm{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+    }
+    .ie-useOSM{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+    }
+    .ie-help{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 2;
+    }
+    .ie-improve{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+    .ie-projects{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+    .ie-developer{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+}
