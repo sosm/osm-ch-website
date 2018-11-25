@@ -94,6 +94,13 @@ nav .active{
     justify-content: center;
     height: 100%
 }
+.grid h1{
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 4px;
+	padding: 10px;
+	border-color: rgba(200,200,200,100)
+}
 .bar > *{
     width: 33%;
     text-align: center;
@@ -290,14 +297,15 @@ nav .active{
 		padding: 10px;
 	}
 }
-@media(max-height: 500px){
-    .mainHeader > div{
+@media(max-height: 550px){
+    .mainHeader > div,.header{
         height: 35vh;
     }
     .mainHeader .title{
         font-size: calc(1.8vw + 2.4vh);
     }
     .grid{
+		display: grid!important;
         grid-template-rows: 120px auto auto;
     }
     #mapClose{
