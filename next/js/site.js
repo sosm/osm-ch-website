@@ -167,7 +167,6 @@ $(document).ready(function() {
         $("body").addClass('map-only');
         map.invalidateSize();
         maphash = new L.Hash(map);
-        geosearch.addTo(map);
     }
     geosearch.addTo(map);
 });
