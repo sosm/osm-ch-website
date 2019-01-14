@@ -298,6 +298,9 @@ nav .active{
 	}
 }
 @media(max-height: 550px){
+    .grid h1{
+        font-size: 1.5em !important;
+    }
     .mainHeader > div,.header{
         height: 35vh;
     }
