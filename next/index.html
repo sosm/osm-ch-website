@@ -57,7 +57,7 @@
 			}
 			function closeMap(){
 				document.getElementById('menu').style.display = 'block';
-				window.location.hash = ''
+				history.pushState("", document.title, window.location.pathname)
 				maphash.stopListening();
 				map.invalidateSize();
 			}
