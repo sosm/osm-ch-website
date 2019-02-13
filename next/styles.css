@@ -59,7 +59,6 @@ nav .active{
 }
 .main{
     padding-bottom: 30px;
-    text-align: center;
     width: 50%;
     margin: 0 auto;
     min-height: calc(75vh - 1.5rem - 3vw - 30px);
@@ -79,7 +78,6 @@ nav .active{
     text-align: center;
 }
 .main ul{
-    text-align: center;
     list-style-position: inside;
 }
 .grid{
