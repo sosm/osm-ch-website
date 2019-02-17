@@ -1,95 +1,103 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>OpenStreetMap Schweiz</title>
-
-    <link rel="stylesheet" href="contrib/leaflet-0.7.2.css" type="text/css"/>
-    <link rel="stylesheet" href="contrib/l.geosearch.css" type="text/css"/>
-    <link rel="stylesheet" href="css/site.css" type="text/css"/>
-
-
-    <script src="contrib/jquery-1.9.1.min.js"></script>
-    <script src="contrib/leaflet-0.7.2.js"></script>
-    <script src="contrib/leaflet-hash.js"></script>
-    <script src="contrib/l.control.geosearch.js"></script>
-    <script src="contrib/l.geosearch.provider.openstreetmap.js"></script>
-    <script src="js/site.js"></script>
-    <script type="text/javascript">
-       window.liveSettings = {
-         api_key: "09532b8c99274efca5c33b069c22122c",
-         detectlang: true,
-         dynamic: true,
-         autocollect: true,
-         staging: false
-       };
-     </script>
-     <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
-</head>
-<body>
-<!-- map with static view for no-script users -->
-<div id="map"><img id="staticmap" src="img/staticmap.jpeg"></div>
-
-<div id="docpage">
-<h1><div class="subheader">Willkommen bei</div>OpenStreetMap Schweiz</h1>
-
-<p><a href="//www.openstreetmap.org">OpenStreetMap</a> ist ein Projekt von Freiwilligen gemeinsam eine freie Karte der gesamten Welt zu erstellen...</p>
-
-<p><a href="//wiki.openstreetmap.org">Mehr Informationen über Openstreetmap</a><br/>
-<a href="http://www.sosm.ch">Mehr Informationen über OSM in der Schweiz</a></p>
-
-<div id="ch-tools" class="toolbox">
-<h3>OSM-Tools für die Schweiz</h3>
-<ul>
-  <li><a href="//umap.osm.ch">Schweizer uMap Server</a></li>
-  <li><a href="//taginfo.osm.ch">Taginfo Schweiz</a></li>
-  <li><a href="//overpass-turbo.osm.ch/">Overpass Turbo Schweiz</a></li>
-  <li><a href="//routing.osm.ch">Routing für Fussgänger, Velo und Auto</a></li>
-  <li><a href="//didok.osm.ch">Check-Karte für Haltestellen des ÖV</a></li>
-  <li><a href="http://qa.poole.ch/ch-roads">Strassen-Check</a></li>
-</ul>
-</div>
-
-<div id="ch-data" class="toolbox">
-<h3>OSM-Daten für die Schweiz</h3>
-<ul>
-  <li><a href="//planet.osm.ch">Schweiz-Extrakt</a></li>
-  <li><a href="//planet.osm.ch/replication">Stündliche Diffs</a></li>
-  <li><a href="//overpass.osm.ch">Overpass-API Schweiz</a></li>
-</ul>
-</div>
-
-<div id="ext-data" class="toolbox">
-<h3>OSM Karten der Schweiz</h3>
- <div class="maptile"><a href="swissstandard.html"><img src="//tile.osm.ch/switzerland/17/68251/46128.png"><br>Schweizer Variante OSM "Standard"</a></div>
- <div class="maptile"><a href="chlv95.html"><img src="//tile.osm.ch/2056/17/74044/61611.png"><br>Standard Karte in Schweizer LV95</a><br> 
- <a href="chlv03.html">und LV03 Projektion</a></div>
- <div class="maptile-last"><a href="swissstyle.html"><img src="//tile.osm.ch/osm-swiss-style/17/68251/46128.png"><br>"Swiss Style"</a></div>
-</div>
-
-<div id="ext-tools" class="toolbox">
-<h3>Weltweite Mapping Tools</h3>
-<ul>
-  <li><a href="http://qa.poole.ch">Karte fehlender Adressen und Strassennamen</a></li>
-</ul>
-</div>
-
-<div id="ext-data" class="toolbox">
-<h3>Weltweite OSM-basierte Karten</h3>
-<ul>
- <li><a href="http://osm.t-i.ch/bicycle/map">Veloweg-Karte</a></li>
- <li><a href="http://www.waymarkedtrails.org">Rad- und Wanderwege</a></li>
-</ul>
-</div>
-
-</div> <!-- docpage-->
-
-<div id="footer_right">Hosting sponsored by <a href="http://adfinis-sygroup.ch">Adfinis SyGroup</a></div>
-<div id="footer"><a href="contact.html">Operated by SOSM, Kontakt/Impressum</a> <a href="http://sosm.ch/about/terms-of-service/">Nutzungsbedingungen und Datenschutz</a></a></div>
-
-<div id="more-map-selector" class="view-selector"><div class="rotate">Für eine interaktive Karte bitte JavaScript aktivieren</div></div>
-<div id="less-map-selector" class="view-selector"><a href="#" class="rotate">Mehr Informationen zu OpenStreetMap</a></div>
-
-
-</body>
+<!DOCTYPE html>
+<html lang="de-CH">
+    <head>
+        <meta charset="UTF-8">
+        <title>OpenStreetMap Schweiz</title>
+        <link href="styles.css" type="text/css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+		<!--Generated from https://realfavicongenerator.net/-->
+		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+		<link rel="manifest" href="favicons/site.webmanifest">
+		<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#000000">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@SwissOSM">
+		<meta name="twitter:title" content="OpenStreetMap Switzerland">
+		<meta name="twitter:description" content="OpenStreetMap Switzerland">
+		<meta name="twitter:creator" content="@SwissOSM">
+		<!-- Twitter Summary card images must be at least 120x120px -->
+		<meta name="twitter:image" content="img/OSM_ch_Card.png"> 
+		<!-- Open Graph data -->
+		<meta property="og:title" content="OpenStreetMap Switzerland" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://osm.ch" />
+		<meta property="og:image" content="img/OSM_ch_Card.png" />
+		<meta property="og:image:secure" content="img/OSM_ch_Card.png" />
+		<meta property="og:description" content="OpenStreetMap Switzerland" /> 
+		<meta property="og:site_name" content="OSM.ch" />
+		<!--Leaflet-->
+        <link href="contrib/leaflet-0.7.2.css" rel="stylesheet" type="text/css">
+        <link href="contrib/l.geosearch.css" rel="stylesheet" type="text/css">
+        <script src="contrib/jquery-1.9.1.min.js"></script>
+        <script src="contrib/leaflet-0.7.2.js"></script>
+        <script src="contrib/leaflet-hash.js"></script>
+        <script src="contrib/l.control.geosearch.js"></script>
+        <script src="contrib/l.geosearch.provider.openstreetmap.js"></script>
+        <script src="js/site.js"></script>
+		<script>
+			window.onload = function(){
+				if(window.location.toString().indexOf('#') != -1){
+					openMap()
+				}
+			}
+			function openMap(){
+				document.getElementById('menu').style.display = 'none'
+				if (maphash){
+				  maphash.startListening();
+				}else{
+				  maphash = new L.Hash(map);
+				}
+				map.invalidateSize();
+			}
+			function closeMap(){
+				document.getElementById('menu').style.display = 'block';
+				history.pushState("", document.title, window.location.pathname)
+				maphash.stopListening();
+				map.invalidateSize();
+			}
+		</script>
+        <script type="text/javascript">
+           window.liveSettings = {
+             api_key: "09532b8c99274efca5c33b069c22122c",
+             detectlang: true,
+             dynamic: true,
+             autocollect: true,
+             staging: false
+           };
+        </script>
+        <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
+    </head>
+    <body>
+        <div onclick="closeMap()" id="mapClose">Menü anzeigen</div>
+        <div id="map"></div>
+        <div id="menu" class="site mainSite">
+            <div class="mainHeader">
+                <div>
+                    <div>
+                        <div class="title">OpenStreetMap Switzerland</div>
+                    </div>
+                    <img src="mainLogo.png" height="100%" />
+                </div>
+            </div>
+            <div class="main">
+                <div class="grid">
+                    <a class="ie-osm" href="osm.html"><h1>Was ist OSM?</h1></a>
+                    <a class="ie-useOSM" href="nutze-osm.html"><h1>Nutze OSM</h1></a>
+                    <a class="ie-help" href="hilfe.html"><h1>Hilfe/Kontakt</h1></a>
+                    <div onclick="openMap()" id="mapOverlay">&nbsp;</div>
+                    <a class="ie-improve" href="verbessern.html"><h1>Hilf mit</h1></a>
+                    <a class="ie-projects" href="projekte.html"><h1>Weitere OSM Projekte</h1></a>
+                    <a class="ie-developer" href="entwickler.html"><h1>Für Entwickler</h1></a>
+                </div>
+            </div>
+            <div class="footer"><a href="contact.html">Operated by SOSM, Contact/Imprint</a> <a href="http://sosm.ch/about/terms-of-service/">Nutzungsbedingungen und Datenschutz.</a> Hosting sponsored by <a href="http://adfinis-sygroup.ch/">Adfinis SyGroup</a></div>
+        </div>
+    </body>
 </html>

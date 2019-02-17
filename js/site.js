@@ -1,6 +1,6 @@
 var map;
 var maphash = null;
-var geosearch = new L.Control.GeoSearch({
+geosearch = new L.Control.GeoSearch({
                     provider: new L.GeoSearch.Provider.OpenStreetMap({countrycodes: 'ch'}),
                     searchLabel: 'Adresse eingeben',
                     notFoundMessage: 'Es wurden keine Ergebnisse gefunden'
@@ -141,7 +141,7 @@ L.Control.OSMReportAProblem = L.Control.Attribution.extend({
 $(document).ready(function() {
     $('#more-map-selector').html('<a href="#" class="rotate">Mehr Karte</a>');
     $('#map').text('');
-    map = new L.SOSM.Map('map', {attributionControl: false}).setView([47, 8.5], 9);
+    map = new L.SOSM.Map('map', {attributionControl: false}).setView([47, 8.5], 10);
 
     (new L.SOSM.layers()).addTo(map);
     map.updateLayers('');
@@ -167,6 +167,6 @@ $(document).ready(function() {
         $("body").addClass('map-only');
         map.invalidateSize();
         maphash = new L.Hash(map);
-        geosearch.addTo(map);
     }
+    geosearch.addTo(map);
 });
