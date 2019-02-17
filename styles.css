@@ -61,8 +61,8 @@ nav .active{
     padding-bottom: 30px;
     width: 50%;
     margin: 0 auto;
-    min-height: calc(75vh - 1.5rem - 3vw - 30px);
-    padding-top: 3vw;
+    min-height: calc(72vh - 1.5rem - 1em - 30px);
+    padding-top: calc(3vh + 1em);
 }
 .main p{
     margin-bottom: 30px;
