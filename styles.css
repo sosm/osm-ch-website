@@ -151,7 +151,7 @@ nav .active{
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-    cursor:url(cursor.png), pointer;
+    cursor:url(cursor.png) 40 40, pointer;
 }
 #mapClose{
     z-index: -10;
