@@ -29,7 +29,8 @@ L.SOSM.Map = L.Map.extend({
           'http://tile.osm.ch/switzerland/{z}/{x}/{y}.png',
         {
           maxZoom: 21,
-          attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors. ' +
+            'Elevation data SRTM and ASTER GDEM. ASTER GDEM is a product of METI and NASA',
           code: "M",
           keyid: "mapnik",
           name: "standard"
@@ -42,7 +43,8 @@ L.SOSM.Map = L.Map.extend({
           maxZoom: 21,
           attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
-            '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a>',
+            '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a> ' +
+            'Elevation data SRTM and ASTER GDEM. ASTER GDEM is a product of METI and NASA',
           code: "S",
           keyid: "swiss-style",
           name: "swiss style"
