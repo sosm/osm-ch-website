@@ -42,9 +42,9 @@ L.SOSM.Map = L.Map.extend({
         {
           maxZoom: 21,
           attribution: 'data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-            'ASTER GDEM, EarthEnv-DEM90, CDEM contains information under OGL Canada',
+            'ASTER GDEM, EarthEnv-DEM90, CDEM contains information under OGL Canada' +
             'map <a href="https://creativecommons.org/licenses/by/4.0/">cc-by</a> ' +
-            '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a> ' +
+            '<a href="https://github.com/xyztobixyz/OSM-Swiss-Style">xyztobixyz</a> ',
           code: "S",
           keyid: "swiss-style",
           name: "swiss style"
