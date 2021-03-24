@@ -1,7 +1,7 @@
 var map;
 var maphash = null;
 geosearch = new L.Control.GeoSearch({
-                    provider: new L.GeoSearch.Provider.OpenStreetMap({countrycodes: 'ch'}),
+                    provider: new L.GeoSearch.Provider.OpenStreetMap({}),
                     searchLabel: 'Adresse eingeben',
                     notFoundMessage: 'Es wurden keine Ergebnisse gefunden'
                 });
