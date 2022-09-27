@@ -12,7 +12,7 @@ body{
 }
 .header{
     background-color: white;
-    height: 25vh;
+    min-height: 25vh;
 }
 .header > div{
     width: 100%;
