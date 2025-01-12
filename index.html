@@ -55,12 +55,14 @@
 				  maphash = new L.Hash(map);
 				}
 				map.invalidateSize();
+				document.getElementById('tx-live-lang-container').style.display = 'none'
 			}
 			function closeMap(){
 				document.getElementById('menu').style.display = 'block';
 				history.pushState("", document.title, window.location.pathname)
 				maphash.stopListening();
 				map.invalidateSize();
+				document.getElementById('tx-live-lang-container').style.display = ''
 			}
 		</script>
         <script type="text/javascript">
