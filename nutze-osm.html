@@ -131,6 +131,24 @@
                     Anfrage pro Sekunde und verwende einen gültigen User-Agent und wenn möglich einen 
                     korrekten Referrer.
                 </p>
+                <p>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li>
+                            <strong>Foot Vampire:</strong> Ein spezielles Routing-Profil für Fussgänger, 
+                            das bevorzugt Wege im Schatten sucht. Dieses experimentelle Profil verwendet 
+                            Schattendaten und bewertet Routen höher, je mehr Schattenabdeckung sie bieten. 
+                            Die Schattendaten sind statisch und keine Echtzeit-Daten. 
+                        </li>
+                        
+                        <li style="margin-top: 15px;">
+                            <strong>Wheelchair:</strong> Ein barrierefreies Routing-Profil für 
+                            Rollstuhlfahrer, das verschiedene Faktoren wie Steigungen, Oberflächenbeschaffenheit 
+                            und rollstuhlspezifische OSM-Tags berücksichtigt. Es berücksichtigt Steigungswinkeln und wendet Priorisierungen für rollstuhlgeeignete Wege an. 
+                            Dieses Profil hilft dabei, die zugänglichsten Routen zu finden.
+                            Berücksichtigte OSM-Tags umfassen unter anderem: <code>wheelchair</code>, <code>kerb:mobility</code>, <code>surface</code>, <code>smoothness</code>, <code>incline</code> und <code>ramp</code>. Dies ist nur eine Teilmenge der berücksichtigten Attribute.
+                        </li>
+                    </ul>
+                </p>
             </div>
             <div class="footer"><a href="contact.html">Operated by SOSM, Contact/Imprint</a> <a href="https://sosm.ch/about/terms-of-service/">Nutzungsbedingungen und Datenschutz.</a> Hosting sponsored by <a href="https://adfinis.com">Adfinis</a> and <a href="https://nine.ch/">nine</a></div>
         </div>
